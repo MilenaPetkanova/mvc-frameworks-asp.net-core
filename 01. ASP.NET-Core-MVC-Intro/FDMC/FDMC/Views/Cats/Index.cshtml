@@ -1,0 +1,15 @@
+﻿@model IEnumerable<FDMC.Models.Cat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fluffy Duffy Munchkin Cats</h1>
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li>@Html.ActionLink(cat.Name, "Details", "Cats", new { id = cat.Id }, null)</li>
+    }
+</ul>
+<input class="btn btn-default" type="submit" value="Add Cat" onclick="location.href='@Url.Action("Create", "Cats")'" />
+
