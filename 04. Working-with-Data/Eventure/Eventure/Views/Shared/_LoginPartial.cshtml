@@ -1,0 +1,79 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<EventureUser> SignInManager
+@inject UserManager<EventureUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    // left side
+    <ul class="navbar-nav left-side">
+        <li class="nav-item">
+            <a class="nav-link-white" asp-controller="Events" asp-action="Index">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link-white" asp-controller="Events" asp-action="Index">Events</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="nav-link-white" asp-controller="Events" asp-action="Create">Create Event</a>
+            }
+        </li>
+
+        @*TODO dropdown menu working*@
+        @*<li>
+
+                class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav"
+
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse d-flex justify-content-between dropdown font-weight-bold">
+                    <a class="navbar-brand dropdown-toggle nav-link bg-info" data-toggle="dropdown">Events</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" asp-controller="Events" asp-action="All">All Events</a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="dropdown-item" asp-controller="Events" asp-action="Create">Create Event</a>
+
+                        }
+                    </div>
+                </div>
+            </li>*@
+    </ul>
+
+    // right side
+    <ul class="navbar-nav right-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-black">Hello, @this.User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Logout">Logout</a>
+        </li>
+    </ul>
+}
+
+else
+{
+    <ul class="navbar-nav right-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Home" asp-action="Index"></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav left-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Register">Register</a>
+        </li>
+    </ul>
+}

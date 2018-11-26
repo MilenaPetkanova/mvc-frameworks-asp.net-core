@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+<main class="mt-3">
+    <h1 class="text-center">Register</h1>
+    <hr class="hr-2 eventure-bg-color half-width" />
+    <form class="register-form mx-auto half-width text-center d-flex flex-wrap justify-content-between" method="post" asp-controller="Users" asp-action="Register">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username..." name="username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email..." name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password..." name="password">
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password..." name="confirmPassword">
+        </div>
+        <hr class="hr-2 eventure-bg-color full-width" />
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name..." name="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name..." name="lastName">
+        </div>
+        <div class="form-group full-width">
+            <label for="ucn">UCN</label>
+            <input type="text" class="form-control" id="ucn" placeholder="UCN..." name="ucn">
+        </div>
+        <hr class="hr-2 eventure-bg-color full-width" />
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn eventure-bg-color">Register</button>
+        </div>
+    </form>
+</main>
+
+

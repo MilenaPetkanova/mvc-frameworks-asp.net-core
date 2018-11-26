@@ -1,0 +1,88 @@
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #000000;
+}
+
+h1, h3 {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: 500;
+}
+
+textarea {
+    resize: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    border: 0;
+    width: 98%;
+}
+
+.eventure-bg-color {
+    background-color: #AFEEEE;
+    color: #000000;
+    font-weight: 500;
+}
+
+/*.nav-link-dark {
+    color: #C0C0C0
+}*/
+
+.left-side {
+    width: 150px;
+}
+
+.hr-muted {
+    background-color: #6c757d;
+    border: 0;
+}
+
+.hr-black {
+    background-color: #000000;
+    border: 0;
+}
+
+.hr-3 {
+    height: 3px;
+}
+
+.hr-2 {
+    height: 2px;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #DC143C;
+    color: #F8F8FF;
+}
+
+.register-form {
+    line-height: 0.9;
+}
+
+.register-form .form-group {
+    width: 48%;
+}
+
+.register-form .form-group.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button-holder {
+    width: 100%;
+}

@@ -15,7 +15,6 @@
             <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Logout">Logout, @this.User.Identity.Name</a>
         </li>
     </ul>
-
 }
 else if (this.User.IsInRole("Admin"))
 {

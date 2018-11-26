@@ -66,28 +66,28 @@ namespace ChuskaAsp.Infrastructure.Extensions
             var prodRange = new List<Product>();
             var product = new Product
             {
-                Name = "Darmush",
-                Price = 1.5m,
+                Name = "First Product",
+                Price = 1,
                 Type = Models.Enums.ProdType.Health,
-                Description = "Голям дармуш"
+                Description = "Some Description"
             };
             prodRange.Add(product);
 
             product = new Product
             {
-                Name = "Double Darmush",
-                Price = 1.9m,
+                Name = "SecondProduct",
+                Price = 3,
                 Type = Models.Enums.ProdType.Health,
-                Description = "Двоен дармуш"
+                Description = "Some Description"
             };
             prodRange.Add(product);
 
             product = new Product
             {
                 Name = "Small Darmush",
-                Price = 1.01m,
+                Price = 9.99m,
                 Type = Models.Enums.ProdType.Health,
-                Description = "Малкият дармуш"
+                Description = "Some Looooooooooooooooooooooooooooooooooond Description"
             };
             prodRange.Add(product);
 

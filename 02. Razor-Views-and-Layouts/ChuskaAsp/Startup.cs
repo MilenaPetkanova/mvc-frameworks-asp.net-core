@@ -42,6 +42,7 @@ namespace ChuskaAsp
             services.AddDbContext<ChuskaDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.SignIn.RequireConfirmedEmail = false;

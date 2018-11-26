@@ -12311,11 +12311,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\milen\\Downloads\\Homework-EXERCISE_ VIEWS & LAYOUTS-654845\\ChuskaAsp\\ChuskaAsp.csproj",
+      "projectUniqueName": "C:\\Users\\milen\\source\\repos\\mvc-frameworks-asp.net-core\\02. Razor-Views-and-Layouts\\ChuskaAsp\\ChuskaAsp.csproj",
       "projectName": "ChuskaAsp",
-      "projectPath": "C:\\Users\\milen\\Downloads\\Homework-EXERCISE_ VIEWS & LAYOUTS-654845\\ChuskaAsp\\ChuskaAsp.csproj",
+      "projectPath": "C:\\Users\\milen\\source\\repos\\mvc-frameworks-asp.net-core\\02. Razor-Views-and-Layouts\\ChuskaAsp\\ChuskaAsp.csproj",
       "packagesPath": "C:\\Users\\milen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\milen\\Downloads\\Homework-EXERCISE_ VIEWS & LAYOUTS-654845\\ChuskaAsp\\obj\\",
+      "outputPath": "C:\\Users\\milen\\source\\repos\\mvc-frameworks-asp.net-core\\02. Razor-Views-and-Layouts\\ChuskaAsp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
