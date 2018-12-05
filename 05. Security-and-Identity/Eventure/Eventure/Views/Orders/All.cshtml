@@ -1,0 +1,35 @@
+﻿@using Eventure.ViewModels.Orders;
+@model List<AllOrdersViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main class="mt-3 mb-5">
+    <h1 class="text-center">All Orders</h1>
+    <hr class="hr-2 eventure-bg-color half-width" />
+    <table class="table w-75 mx-auto table-hover">
+        <thead>
+            <tr class="row">
+                <th class="col-md-1">#</th>
+                <th class="col-md-4">Event</th>
+                <th class="col-md-2">Customer</th>
+                <th class="col-md-2">OrderedOn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ var index = 1;}
+            @foreach (var order in Model)
+            {
+                <tr class="row">
+                    <td class="col-md-1">@index</td>
+                    <td class="col-md-4">@order.EventName</td>
+                    <td class="col-md-2">@order.CustomerName</td>
+                    <td class="col-md-2">@order.OrderedOnStr</td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+    <hr class="hr-2 eventure-bg-color half-width" />
+</main>

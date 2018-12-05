@@ -1,0 +1,110 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<EventureUser> SignInManager
+@inject UserManager<EventureUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>EVENTURE</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset-css.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg eventure-bg-color">
+                <a class="navbar-brand nav-link-white" href="/">Eventures</a>
+                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                    @*<partial name="_LoginPartial" />*@
+
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                            <ul class="navbar-nav left-side d-flex justify-content-around">
+                                <li class="nav-item">
+                                    <a class="nav-link-white" asp-controller="Events" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown show">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Events
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" asp-controller="Events" asp-action="AllEvents">All Events</a>
+                                            <a class="dropdown-item" asp-controller="Events" asp-action="UserEvents">My Events</a>
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <a class="dropdown-item" asp-controller="Events" asp-action="Create">Create Event</a>
+
+                                            }
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown show">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Orders
+                                        </a>
+
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" asp-controller="Orders" asp-action="All">All Orders</a>
+                                            </div>
+                                        }
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="navbar-nav right-side">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-black">Hello, @this.User.Identity.Name!</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Logout">Logout</a>
+                            </li>
+                        </ul>
+                    }
+
+                    else
+                    {
+                        <ul class="navbar-nav right-side">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white" asp-controller="Home" asp-action="Index"></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav left-side">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Register">Register</a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </nav>
+        </header>
+
+        @RenderBody()
+
+        <footer>
+            <div class="container-fluid eventure-bg-color">
+                <div class="text-muted p-2 text-center">
+                    &copy; CopyRight Eventures Inc. 2018. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

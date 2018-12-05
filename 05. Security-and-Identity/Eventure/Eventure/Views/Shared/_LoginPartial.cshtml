@@ -1,0 +1,57 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<EventureUser> SignInManager
+@inject UserManager<EventureUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    // left side
+<ul class="navbar-nav left-side">
+    <li class="nav-item">
+        <a class="nav-link-white" asp-controller="Events" asp-action="Index">Home</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link-white" asp-controller="Events" asp-action="Index">Events</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="nav-link-white" asp-controller="Events" asp-action="Create">Create Event</a>
+        }
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link-white" asp-controller="Orders" asp-action="All">Orders</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="nav-link-white" asp-controller="Orders" asp-action="All">All Orders</a>
+        }
+    </li>
+</ul>
+
+    // right side
+    <ul class="navbar-nav right-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-black">Hello, @this.User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Logout">Logout</a>
+        </li>
+    </ul>
+}
+
+else
+{
+    <ul class="navbar-nav right-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Home" asp-action="Index"></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav left-side">
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link-white" asp-controller="Users" asp-action="Register">Register</a>
+        </li>
+    </ul>
+}
